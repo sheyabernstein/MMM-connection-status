@@ -1,0 +1,18 @@
+{
+  "name": "MMM-connection-status",
+  "version": "1.0.0",
+  "description": "Display internet connection status for MagicMirror2",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sheyabernstein/mmm-connection-status.git"
+  },
+  "keywords": [
+    "MagicMirror internet connection",
+  ],
+  "author": "Sheya Bernstein",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sheyabernstein/mmm-connection-status/issues"
+  },
+  "homepage": "https://github.com/sheyabernstein/mmm-connection-status#readme"
+}
