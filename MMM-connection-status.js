@@ -27,22 +27,14 @@ Module.register('MMM-connection-status', {
 	// Override dom generator.
 	getDom: function() {
 		var wrapper = document.createElement('div');
-
-		if (!this.loaded) {
-			wrapper.innerHTML = this.translate('LOADING...');
-			wrapper.className = 'dimmed light';
-			return wrapper;
-		}
-
-		var header = document.createElement('div');
 		var connectionActive = this.checkConnection();
 
 		if (window.navigator.onLine) {
-			header.className = 'small bright';
-			header.innerHTML = 'Internet is connected';
+			wrapper.className = 'small bright';
+			wrapper.innerHTML = 'Internet is connected';
 		} else {
-			header.className = 'normal bright';
-			header.innerHTML = 'No internet connection';
+			wrapper.className = 'normal bright';
+			wrapper.innerHTML = 'No internet connection';
 		}
 
 		return wrapper;
@@ -63,6 +55,4 @@ Module.register('MMM-connection-status', {
 			self.getDom();
 		}, nextLoad);
 	},
-
-
 })
