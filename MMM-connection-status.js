@@ -30,7 +30,7 @@ Module.register('MMM-connection-status', {
 		var connectionActive = this.checkConnection();
 
 		if (window.navigator.onLine) {
-			wrapper.className = 'small bright';
+			wrapper.className = 'small';
 			wrapper.innerHTML = 'Internet is connected';
 		} else {
 			wrapper.className = 'normal bright';
