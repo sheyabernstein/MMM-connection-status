@@ -10,7 +10,7 @@ Display internet connection status for MagicMirror<sup>2</sup>
  
      ```
      {
-         module: 'MMM-internet-connection',
+         module: 'MMM-connection-status',
          header: "Internet Connection",
          position: 'top_left', // Or any valid MagicMirror position.
          config: {
