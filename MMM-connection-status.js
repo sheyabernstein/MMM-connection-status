@@ -19,15 +19,12 @@ Module.register('MMM-connection-status', {
 	// Define start sequence.
 	start: function() {
 		Log.info('Starting module: ' + this.name);
-
-		this.loaded = false;
 		this.scheduleUpdate(this.config.initialLoadDelay);
 	},
 
 	// Override dom generator.
 	getDom: function() {
 		var wrapper = document.createElement('div');
-		var connectionActive = this.checkConnection();
 
 		if (window.navigator.onLine) {
 			wrapper.className = 'small';
@@ -38,10 +35,6 @@ Module.register('MMM-connection-status', {
 		}
 
 		return wrapper;
-	},
-
-	checkConnection: function() {
-		return window.navigator.onLine;
 	},
 
 	scheduleUpdate: function(delay, fn) {
