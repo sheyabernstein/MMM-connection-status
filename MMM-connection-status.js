@@ -10,9 +10,6 @@ Module.register('MMM-connection-status', {
 	// Default module config.
 	defaults: {
 		updateInterval:  60 * 1000, // every minute
-		animationSpeed: 1000,
-
-		retryDelay: 2500,
 		initialLoadDelay: 0,
 	},
 
