@@ -1,0 +1,7 @@
+{
+	"INET_CONN_CONNECTED": "Terhubung ke internet",
+	"INET_CONN_NOTCONNECTED": "Tidak terhubung ke internet",
+
+	"TXT_INET_CONN": "KONEKSI INTERNET",
+	"TXT_INET_CONN_DESC": "menampilkan status koneksi internet"
+}

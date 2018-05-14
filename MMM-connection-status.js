@@ -16,6 +16,14 @@ Module.register('MMM-connection-status', {
 		initialLoadDelay: 0,
 	},
 
+  // Define required translations.
+	getTranslations: function() {
+    return {
+      'en': 'translations/en.json',
+      'id': 'translations/id.json'
+    };
+	},
+
 	// Define start sequence.
 	start: function() {
 		Log.info('Starting module: ' + this.name);
@@ -31,10 +39,10 @@ Module.register('MMM-connection-status', {
 
 		if (window.navigator.onLine) {
 			wrapper.className = 'small';
-			wrapper.innerHTML = 'Internet is connected';
+			wrapper.innerHTML = this.translate("INET_CONN_CONNECTED");
 		} else {
 			wrapper.className = 'normal bright';
-			wrapper.innerHTML = 'No internet connection';
+			wrapper.innerHTML = this.translate("INET_CONN_NOTCONNECTED");
 		}
 
 		return wrapper;
@@ -55,4 +63,4 @@ Module.register('MMM-connection-status', {
 			self.getDom();
 		}, nextLoad);
 	},
-})
+});
