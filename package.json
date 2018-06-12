@@ -7,7 +7,7 @@
     "url": "git+https://github.com/sheyabernstein/mmm-connection-status.git"
   },
   "keywords": [
-    "MagicMirror internet connection",
+    "MagicMirror internet connection"
   ],
   "author": "Sheya Bernstein",
   "license": "MIT",
