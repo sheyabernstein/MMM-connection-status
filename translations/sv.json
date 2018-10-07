@@ -1,0 +1,7 @@
+{
+	"INET_CONN_CONNECTED": "Internet är anslutet",
+	"INET_CONN_NOTCONNECTED": "Internet är inte anslutet",
+
+	"TXT_INET_CONN": "INTERNET CONNECTION",
+	"TXT_INET_CONN_DESC": "Visar status för anslutning till internet"
+}
