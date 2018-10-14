@@ -22,4 +22,4 @@ Display internet connection status for MagicMirror<sup>2</sup>
 ## Configuration Options
 | **Option** | **Default** | **Description** |
 | --- | --- | --- |
-| `updateInterval` | `600000` | Time in ms to wait between updating |
+| `updateInterval` | `60000` | Time in ms to wait between updating |
