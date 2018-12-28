@@ -32,7 +32,6 @@ Module.register('MMM-connection-status', {
 	// Override dom generator.
 	getDom: function() {
 		var wrapper = document.createElement('div');
-        // console.log(window.navigator.onLine);
 		if (window.navigator.onLine) {
 			wrapper.className = 'small';
 			wrapper.innerHTML = this.translate("INET_CONN_CONNECTED");
