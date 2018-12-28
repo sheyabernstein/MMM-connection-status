@@ -11,6 +11,7 @@ Module.register('MMM-connection-status', {
 	defaults: {
 		updateInterval:  60 * 1000, // every minute
 		initialLoadDelay: 0,
+		animationSpeed: 1000 * 0.25,
 	},
 
   // Define required translations.
@@ -25,12 +26,14 @@ Module.register('MMM-connection-status', {
 	start: function() {
 		Log.info('Starting module: ' + this.name);
 		this.scheduleUpdate(this.config.initialLoadDelay);
+		// Loop infinitely
+		this.loop();
 	},
 
 	// Override dom generator.
 	getDom: function() {
 		var wrapper = document.createElement('div');
-
+        // console.log(window.navigator.onLine);
 		if (window.navigator.onLine) {
 			wrapper.className = 'small';
 			wrapper.innerHTML = this.translate("INET_CONN_CONNECTED");
@@ -53,4 +56,15 @@ Module.register('MMM-connection-status', {
 			self.getDom();
 		}, nextLoad);
 	},
+
+	// Infinite loop
+	loop: function() {
+		var self = this
+		setTimeout(function() {
+			setInterval(function() {
+				// Refreshes the dom, using the getDom() function
+				self.updateDom(self.config.animationSpeed);
+			}, self.config.updateInterval); // Loop interval
+		}, self.config.initialLoadDelay); // First delay
+	}
 });
