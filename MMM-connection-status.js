@@ -9,7 +9,7 @@ Module.register('MMM-connection-status', {
 
 	// Default module config.
 	defaults: {
-		updateInterval:  60 * 1000, // every minute
+        updateInterval: 1000 * 60, // every minute
 		initialLoadDelay: 0,
 		animationSpeed: 1000 * 0.25,
 	},
@@ -24,9 +24,8 @@ Module.register('MMM-connection-status', {
 
 	// Define start sequence.
 	start: function() {
-		Log.info('Starting module: ' + this.name);
-		this.scheduleUpdate(this.config.initialLoadDelay);
-		// Loop infinitely
+        Log.info("Starting module: " + this.name);
+        // Loop infinitely
 		this.loop();
 	},
 
@@ -45,21 +44,9 @@ Module.register('MMM-connection-status', {
 		return wrapper;
 	},
 
-	scheduleUpdate: function(delay, fn) {
-		var nextLoad = this.config.updateInterval;
-		if (typeof delay !== 'undefined' && delay >= 0) {
-			nextLoad = delay;
-		}
-
-		var self = this
-		setTimeout(function() {
-			self.getDom();
-		}, nextLoad);
-	},
-
 	// Infinite loop
 	loop: function() {
-		var self = this
+        var self = this;
 		setTimeout(function() {
 			setInterval(function() {
 				// Refreshes the dom, using the getDom() function
