@@ -20,6 +20,9 @@ Display internet connection status for MagicMirror<sup>2</sup>
      ```
 
 ## Configuration Options
-| **Option** | **Default** | **Description** |
-| --- | --- | --- |
-| `updateInterval` | `60000` | Time in ms to wait between updating |
+
+| **Option**         | **Default** | **Description**                     |
+| ------------------ | ----------- | ----------------------------------- |
+| `updateInterval`   | `60000`     | Time in ms to wait between updating |
+| `initialLoadDelay` | `0`         | Time in ms to wait until start      |
+| `animationSpeed`   | `250`       | Fade animation time                 |
