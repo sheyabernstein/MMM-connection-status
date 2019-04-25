@@ -18,7 +18,8 @@ Module.register('MMM-connection-status', {
 	getTranslations: function() {
     return {
       'en': 'translations/en.json',
-      'id': 'translations/id.json'
+      'id': 'translations/id.json',
+	  'es': 'translations/es.json'
     };
 	},
 
