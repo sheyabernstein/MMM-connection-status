@@ -1,0 +1,7 @@
+{
+	"INET_CONN_CONNECTED": "Hay conexión a internet",
+	"INET_CONN_NOTCONNECTED": "No hay conexión a internet",
+
+	"TXT_INET_CONN": "CONEXIÓN A INTERNET",
+	"TXT_INET_CONN_DESC": "Muestra el estado de la conexión a internet"
+}
