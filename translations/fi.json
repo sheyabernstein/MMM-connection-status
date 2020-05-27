@@ -1,0 +1,7 @@
+{
+	"INET_CONN_CONNECTED": "Internet on yhdistetty",
+	"INET_CONN_NOTCONNECTED": "Internet ei ole yhdistetty",
+
+	"TXT_INET_CONN": "INTERNETYHTEYS",
+	"TXT_INET_CONN_DESC": "näytä Internetyhteyden tila"
+}
