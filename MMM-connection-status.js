@@ -19,7 +19,8 @@ Module.register('MMM-connection-status', {
     return {
       'en': 'translations/en.json',
       'id': 'translations/id.json',
-	  'es': 'translations/es.json'
+      'es': 'translations/es.json',
+      'fi': 'translations/fi.json'
     };
 	},
 
