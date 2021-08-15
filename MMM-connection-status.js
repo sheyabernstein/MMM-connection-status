@@ -9,25 +9,26 @@ Module.register('MMM-connection-status', {
 
 	// Default module config.
 	defaults: {
-        updateInterval: 1000 * 60, // every minute
+		updateInterval: 1000 * 60, // every minute
 		initialLoadDelay: 0,
 		animationSpeed: 1000 * 0.25,
 	},
 
-  // Define required translations.
+	// Define required translations.
 	getTranslations: function() {
-    return {
-      'en': 'translations/en.json',
-      'id': 'translations/id.json',
-      'es': 'translations/es.json',
-      'fi': 'translations/fi.json'
-    };
+		return {
+			'en': 'translations/en.json',
+			'id': 'translations/id.json',
+			'es': 'translations/es.json',
+			'fi': 'translations/fi.json'
+		};
 	},
 
 	// Define start sequence.
 	start: function() {
-        Log.info("Starting module: " + this.name);
-        // Loop infinitely
+		Log.info("Starting module: " + this.name);
+		this.sendSocketNotification("GET_IP");
+		// Loop infinitely
 		this.loop();
 	},
 
@@ -36,8 +37,12 @@ Module.register('MMM-connection-status', {
 		var wrapper = document.createElement('div');
 		if (window.navigator.onLine) {
 			wrapper.className = 'small';
-			wrapper.innerHTML = this.translate("INET_CONN_CONNECTED");
-		} else {
+			if (this.ip_address) {
+				wrapper.innerHTML = this.ip_address;
+			}
+			//wrapper.innerHTML = this.translate("INET_CONN_CONNECTED");
+		}
+		else {
 			wrapper.className = 'normal bright';
 			wrapper.innerHTML = this.translate("INET_CONN_NOTCONNECTED");
 		}
@@ -47,12 +52,19 @@ Module.register('MMM-connection-status', {
 
 	// Infinite loop
 	loop: function() {
-        var self = this;
+		var self = this;
 		setTimeout(function() {
 			setInterval(function() {
 				// Refreshes the dom, using the getDom() function
 				self.updateDom(self.config.animationSpeed);
 			}, self.config.updateInterval); // Loop interval
 		}, self.config.initialLoadDelay); // First delay
+	},
+
+	socketNotificationReceived: function(notification, payload) {
+		if (notification === 'ip_address') {
+			this.ip_address = payload;
+			this.updateDom();
+		}
 	}
 });
