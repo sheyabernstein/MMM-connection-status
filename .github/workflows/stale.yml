@@ -10,4 +10,7 @@ jobs:
         with:
           days-before-issue-stale: 360
           days-before-issue-close: 14
-          stale-issue-message: 'This issue is being marked as stale due to no recent activity'
+          stale-issue-message: "This issue is being marked as stale due to no recent activity"
+          days-before-pr-stale: 180
+          days-before-pr-close: 30
+          close-pr-message: "This PR is being marked as stale due to no recent activity"
