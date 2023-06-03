@@ -9,9 +9,11 @@ Module.register('MMM-connection-status', {
 
 	// Default module config.
 	defaults: {
-        updateInterval: 1000 * 60, // every minute
-		initialLoadDelay: 0,
-		animationSpeed: 1000 * 0.25,
+      updateInterval: 1000 * 60, // every minute
+			initialLoadDelay: 0,
+			animationSpeed: 1000 * 0.25,
+			connectedColor: "var(--color-text)",
+			disconnectedColor: "var(--color-text)",
 	},
 
   // Define required translations.
@@ -36,9 +38,11 @@ Module.register('MMM-connection-status', {
 		var wrapper = document.createElement('div');
 		if (window.navigator.onLine) {
 			wrapper.className = 'small';
+			wrapper.style.color = this.config.connectedColor;
 			wrapper.innerHTML = this.translate("INET_CONN_CONNECTED");
 		} else {
 			wrapper.className = 'normal bright';
+			wrapper.style.color = this.config.disconnectedColor;
 			wrapper.innerHTML = this.translate("INET_CONN_NOTCONNECTED");
 		}
 
