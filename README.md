@@ -26,3 +26,5 @@ Display internet connection status for MagicMirror<sup>2</sup>
 | `updateInterval`   | `60000`     | Time in ms to wait between updating |
 | `initialLoadDelay` | `0`         | Time in ms to wait until start      |
 | `animationSpeed`   | `250`       | Fade animation time                 |
+| `connectedColor`   | `var(--color-text)`       | Text color when internet is connected                 |
+| `disconnectedColor`   | `var(--color-text)`       | Text color when internet is disconnected                 |
