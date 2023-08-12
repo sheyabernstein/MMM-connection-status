@@ -9,22 +9,22 @@ Module.register('MMM-connection-status', {
 
 	// Default module config.
 	defaults: {
-      updateInterval: 1000 * 60, // every minute
-			initialLoadDelay: 0,
-			animationSpeed: 1000 * 0.25,
-			connectedColor: "var(--color-text)",
-			disconnectedColor: "var(--color-text)",
+		updateInterval: 1000 * 60, // every minute
+		initialLoadDelay: 0,
+		animationSpeed: 1000 * 0.25,
+		connectedColor: "var(--color-text)",
+		disconnectedColor: "var(--color-text)",
 	},
 
   // Define required translations.
 	getTranslations: function() {
-    return {
-      'en': 'translations/en.json',
-      'es': 'translations/es.json',
-		'fr': 'translations/fr.json',
-      'fi': 'translations/fi.json',
-		'id': 'translations/id.json',
-    };
+		return {
+			'en': 'translations/en.json',
+			'es': 'translations/es.json',
+			'fr': 'translations/fr.json',
+			'fi': 'translations/fi.json',
+			'id': 'translations/id.json',
+		};
 	},
 
 	// Define start sequence.
@@ -36,7 +36,7 @@ Module.register('MMM-connection-status', {
 
 	// Override dom generator.
 	getDom: function() {
-		var wrapper = document.createElement('div');
+		const wrapper = document.createElement('div');
 		if (window.navigator.onLine) {
 			wrapper.className = 'small';
 			wrapper.style.color = this.config.connectedColor;
@@ -52,7 +52,7 @@ Module.register('MMM-connection-status', {
 
 	// Infinite loop
 	loop: function() {
-        var self = this;
+        const self = this;
 		setTimeout(function() {
 			setInterval(function() {
 				// Refreshes the dom, using the getDom() function
