@@ -20,9 +20,10 @@ Module.register('MMM-connection-status', {
 	getTranslations: function() {
     return {
       'en': 'translations/en.json',
-      'id': 'translations/id.json',
       'es': 'translations/es.json',
-      'fi': 'translations/fi.json'
+		'fr': 'translations/fr.json',
+      'fi': 'translations/fi.json',
+		'id': 'translations/id.json',
     };
 	},
 
